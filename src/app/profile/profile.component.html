@@ -1,0 +1,35 @@
+
+<div *ngIf="profiles.length > 0" 
+    class="swipe-card-container"
+    (mousedown)="onMouseDown($event)" 
+    (mousemove)="onMouseMove($event)" 
+    (mouseup)="onMouseUp()" 
+    (mouseleave)="onMouseLeave()">
+    <span class="recommend-title"> <mat-icon (click)="goBack()" style="cursor: pointer;height: 17px;">arrow_back</mat-icon>Daily recomented</span>
+     <mat-card class="swipe-card">
+
+     <img mat-card-image [src]="profiles[currentProfileIndex]?.image" 
+        alt="{{ profiles[currentProfileIndex]?.name }}" 
+        (click)="onViewProfile(profiles[currentProfileIndex])" />
+   <mat-card-title>{{ profiles[currentProfileIndex]?.name }}</mat-card-title>
+   <mat-card-subtitle>{{ profiles[currentProfileIndex]?.age }} years old</mat-card-subtitle>
+   <mat-card-content>{{ profiles[currentProfileIndex]?.bio }}</mat-card-content>
+  
+   <mat-card-actions style="display: flex; align-items: center; justify-content: flex-start;">
+     <mat-icon (click)="swipe('shortlist')" aria-label="Shortlist">
+       star_border
+     </mat-icon>
+     <span style="margin-right: 16px; cursor: pointer;" (click)="swipe('shortlist')">Shortlist</span>
+     <span style="margin-right: 16px;"></span>
+     <span style="margin-right: 16px;">Like her?</span>
+     <button mat-button style="border-radius: 50%; background-color: white; border: 2px solid lightgray; color: gray; padding: 5px; min-width: 36px; height: 36px; font-size: 10px; line-height: 14px; margin-right: 10px;"
+             (click)="swipe('left')" aria-label="Dislike">
+       <mat-icon>close</mat-icon>
+     </button>
+     <button mat-button style="border-radius: 50%; background-color: orange; color: white; padding: 5px; min-width: 36px; height: 36px; font-size: 10px; line-height: 14px;"
+             (click)="swipe('right')" aria-label="Like">
+       <mat-icon>check</mat-icon>
+     </button>
+   </mat-card-actions>
+ </mat-card>
+</div>

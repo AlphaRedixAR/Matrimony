@@ -1,0 +1,27 @@
+<div *ngIf="profiles.length > 0" class="swipe-card-container"  
+    (mousedown)="onMouseDown($event)" (mousemove)="onMouseMove($event)" (mouseup)="onMouseUp()">
+
+ <mat-card class="swipe-card">
+   <img mat-card-image [src]="profiles[currentProfileIndex]?.image" alt="{{ profiles[currentProfileIndex]?.name }}" (click)="onViewProfile(profiles[currentProfileIndex])" />
+   <mat-card-title>{{ profiles[currentProfileIndex]?.name }}, {{ profiles[currentProfileIndex]?.age }} years old</mat-card-title>
+   <mat-card-content>{{ profiles[currentProfileIndex]?.bio }}</mat-card-content>
+   <mat-card-actions>
+    <button mat-button style="border-radius: 50px; background-color: orange; color: white; padding: 7px 20px;font-size: 10px;" 
+            (click)="onViewProfile(profiles[currentProfileIndex])">Yes</button>
+    <button mat-button style="border-radius: 50px; background-color: white; color: black; padding: 7px 20px; border: 1px solid black;font-size: 10px;"
+            (click)="swipe('left')">No</button>
+  </mat-card-actions>
+ </mat-card>
+
+ <mat-card class="swipe-card">
+   <img mat-card-image [src]="profiles[currentProfileIndex + 1]?.image" alt="{{ profiles[currentProfileIndex + 1]?.name }}" (click)="onViewProfile(profiles[currentProfileIndex + 1])" />
+   <mat-card-title>{{ profiles[currentProfileIndex + 1]?.name }}, {{ profiles[currentProfileIndex + 1]?.age }} years old</mat-card-title>
+   <mat-card-content>{{ profiles[currentProfileIndex + 1]?.bio }}</mat-card-content>
+   <mat-card-actions>
+     <button mat-button style="border-radius: 50px; background-color: orange; color: white; padding: 7px 20px;font-size: 10px;" 
+             (click)="onViewProfile(profiles[currentProfileIndex + 1])">Yes</button>
+     <button mat-button style="border-radius: 50px; background-color: white; color: black; padding: 7px 20px; border: 1px solid black;font-size: 10px;" 
+             (click)="swipe('left')">No</button>
+   </mat-card-actions>
+ </mat-card>
+</div>

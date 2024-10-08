@@ -1,0 +1,38 @@
+[
+    {
+      "id": 1,
+      "name": "Jesi",
+      "age": 25,
+      "image": "assets/pic1.jpg",
+      "bio": "BE Computer Science."
+    },
+    {
+      "id": 2,
+      "name": "Renu",
+      "age": 28,
+      "image": "assets/pic2.jpg",
+      "bio": "BSC Physcology."
+    },
+    {
+        "id": 3,
+        "name": "Geetha",
+        "age": 25,
+        "image": "assets/pic3.jpg",
+        "bio": "BCom  ."
+      },
+      {
+        "id": 4,
+        "name": "Mythly",
+        "age": 28,
+        "image": "assets/pic4.jpg",
+        "bio": "BSC CS."
+      },
+      {
+        "id": 5,
+        "name": "Kareena",
+        "age": 28,
+        "image": "assets/pic5.jpg",
+        "bio": "BSC Chemistry."
+      }
+  ]
+  
